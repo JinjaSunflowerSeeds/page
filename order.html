@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place Your Order - Freshly Roasted Perfection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Merriweather', serif;
+            margin: 0;
+            padding: 0;
+            background: #1d1d1d; /* Deep charcoal for the background */
+            color: #f1f1f1; /* Light text for contrast */
+        }
+
+        /* Navigation Bar */
+        nav {
+            background: #282828; /* Dark background for nav */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #f1f1f1;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #cba135; /* Gold accent for hover effect */
+            color: #282828;
+        }
+
+        /* Adjusting the section to give space below the fixed nav */
+        section {
+            padding-top: 100px; /* Creates space for the fixed nav */
+        }
+
+        /* Form Styling */
+        .order-form {
+            background: #333333;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .order-form label {
+            display: block;
+            font-size: 1.1rem;
+            margin-top: 15px;
+            color: #f1f1f1;
+        }
+
+        .order-form input,
+        .order-form select,
+        .order-form textarea,
+        .order-form button {
+            width: 100%;
+            margin-top: 5px;
+            padding: 12px;
+            font-size: 1rem;
+            border: 1px solid #444;
+            border-radius: 4px;
+        }
+
+        .order-form select {
+            padding-right: 40px; /* Space for the dropdown arrow */
+        }
+
+        .order-form button {
+            background: #cba135; /* Gold button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+
+        .order-form button:hover {
+            background: #9e7d24; /* Darker gold on hover */
+        }
+
+        /* Confidence Message Styling */
+        .confidence-message {
+            background: #2b2b2b; /* Slightly lighter shade of dark gray */
+            color: hwb(86 96% 1%); /* Gold for header text */
+            text-align: center;
+            padding: 40px 20px 20px; /* Reduced top padding */
+            margin-top: 20px;
+            border-bottom: 1px solid #acaf4c; /* Greenish color for the bottom line */
+        }
+
+        .confidence-message h3 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #cba135; /* Gold for the heading */
+        }
+
+        .confidence-message p {
+            font-size: 0.75rem;
+            margin-top: 10px;
+        }
+
+        /* Header with Gold Underline */
+        header {
+            background: #2b2b2b; /* Slightly lighter shade of dark gray */
+            color: #cba135; /* Gold for header text */
+            text-align: center;
+            padding: 80px 20px 20px;
+            margin-top: 60px; /* Reduced gap between header and nav */
+            border-bottom: 4px solid #cba135; /* Gold underline */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #282828;
+            color: #f1f1f1;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="flavors.html">Flavors</a>
+        <a href="order.html">Place an Order</a>
+    </nav>
+
+    <!-- Order Form Section -->
+    <section>
+        <!-- Confidence Message Above the Form -->
+        <div class="confidence-message">
+            <h3>Buy With Confidence</h3>
+            <p>We take pride in delivering the freshest, highest-quality sunflower seeds. Unlike stale pre-packaged options you may find online, our products are made-to-order to ensure you receive only the best.</p>
+            <p>Your order will be processed on a first-come, first-served basis. Once we receive your order, we'll promptly reach out to you for delivery details. Rest assured, we only take payment when your order is delivered.</p>
+            <p>Not satisfied with your purchase? No problem! We offer a full money-back guarantee if you're not happy with our product.</p>
+            <p>Our current wait time is just 3 days—freshness guaranteed!</p>
+        </div>
+
+        <!-- Order Form -->
+        <form class="order-form" action="https://formspree.io/f/xwppennj" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="flavor">Select Flavor:</label>
+            <select id="flavor" name="flavor" required>
+                <option value="Original">Original</option>
+                <option value="Spicy">Spicy</option>
+                <option value="Garlic">Garlic</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" placeholder="Enter quantity" min="1" required>
+
+            <label for="comments">Additional Comments:</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Any special requests?"></textarea>
+
+            <button type="submit">Submit Order</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Jin.ja Sunflower Seeds. All rights reserved.</p>
+    </footer>
+</body>
+</html>
